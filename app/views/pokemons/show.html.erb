@@ -1,0 +1,8 @@
+<%= @pokemon.name %>
+<%= @pokemon.victories %>
+
+<% if @pokemon.badge_earned %>
+  <p>おめでとう！バッジげっとやで</p>
+<% end %>
+
+<%= button_to "WIIIN!!!",increment_victories_pokemon_path(@pokemon), method: :patch %>

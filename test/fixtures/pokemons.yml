@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  victories: 1
+  badge_earned: false
+
+two:
+  name: MyString
+  victories: 1
+  badge_earned: false
