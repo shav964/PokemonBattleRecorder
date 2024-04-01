@@ -5,4 +5,7 @@ class PokemonsController < ApplicationController
     @pokemon.increment_victories
     redirect_to @pokemon
   end
+  def index
+    @pokemons = Pokemon.all
+  end
 end
