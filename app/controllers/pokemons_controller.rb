@@ -3,7 +3,7 @@ class PokemonsController < ApplicationController
   def increment_victories
     @pokemon = Pokemon.find(params[:id])
     @pokemon.increment_victories
-    redirect_to @pokemon
+    redirect_to pokemons_path(victories: @pokemon.victories) # 最新の勝利数をパラメータとして含める
     
   end
   def index

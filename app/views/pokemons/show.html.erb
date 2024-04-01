@@ -4,5 +4,23 @@
 <% if @pokemon.badge_earned %>
   <p>おめでとう！バッジげっとやで</p>
 <% end %>
+<button onclick="window.history.back()">戻る</button>
+<script>
+  // ボタンがクリックされたときの処理
+  document.getElementById('backButton').addEventListener('click', function() {
+    // 元のページのURLに最新の勝利数を含める
+    var currentPageUrl = window.location.href;
+    var victories = getLatestVictories(); // 最新の勝利数を取得する関数を呼び出す
+    var urlWithVictories = currentPageUrl + "?victories=" + victories;
 
+    // ブラウザの戻る機能を呼び出す
+    window.location.href = urlWithVictories;
+  });
+
+  // 最新の勝利数を取得する関数（適宜実装する）
+  function getLatestVictories() {
+    // ここで最新の勝利数を取得する処理を実装する
+    // 例えば、Ajaxリクエストを使用してサーバーから最新の勝利数を取得するなど
+  }
+</script>
 <%= button_to "WIIIN!!!",increment_victories_pokemon_path(@pokemon), method: :patch %>
