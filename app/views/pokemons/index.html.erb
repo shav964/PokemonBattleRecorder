@@ -1,9 +1,12 @@
+<!-- app/views/pokemons/index.html.erb -->
+
 <h1>Pokemons</h1>
 <ul>
   <% @pokemons.each do |pokemon| %>
     <li>
       <%= pokemon.name %> - Victories: <%= pokemon.victories %>
       <%= button_to "Increment Victories", increment_victories_pokemon_path(pokemon), method: :patch %>
+      <%= button_to "Reset Victories", reset_victories_pokemon_path(pokemon), method: :patch %>
     </li>
   <% end %>
 </ul>
