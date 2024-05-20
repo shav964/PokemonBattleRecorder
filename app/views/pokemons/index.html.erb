@@ -1,12 +1,25 @@
 <!-- app/views/pokemons/index.html.erb -->
 
-<h1>Pokemons</h1>
-<ul>
+<header>
+  <h1>ポケモンバトルレコーダー</h1> 
+</header>
+
+<main>
+  <ul class="pokemon-list">
   <% @pokemons.each do |pokemon| %>
-    <li>
-      <%= pokemon.name %> - Victories: <%= pokemon.victories %>
-      <%= button_to "Increment Victories", increment_victories_pokemon_path(pokemon), method: :patch %>
-      <%= button_to "Reset Victories", reset_victories_pokemon_path(pokemon), method: :patch %>
+    <li class="pokemon-item">
+      <!-- ポケモンの画像を表示 -->
+      <%= image_tag "#{pokemon.id}.png", alt: pokemon.name, class: "pokemon-image" %>
+      <!-- ポケモンの名前と勝利数を表示 -->
+      <div>
+        <%= pokemon.name %> - Victories: <%= pokemon.victories %>
+        <%= button_to "Increment Victories", increment_victories_pokemon_path(pokemon), method: :patch %>
+        <%= button_to "Reset Victories", reset_victories_pokemon_path(pokemon), method: :patch %>
+        <% if pokemon.victories >= 10 %>
+          <span class="badge">🏆</span>
+        <% end %>
+      </div>
     </li>
   <% end %>
-</ul>
+  </ul>
+</main>

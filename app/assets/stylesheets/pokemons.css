@@ -1,0 +1,38 @@
+/* ポケモンのリストのスタイル */
+body {
+  
+  letter-spacing: 0.05em;
+}
+header {
+  color: #24292e;
+  background-color: gainsboro;
+}
+h1 {
+  font-weight: bold;
+  color: ;
+}
+
+.pokemon-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.pokemon-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* ポケモンの画像のスタイル */
+.pokemon-image {
+  width: 100px; /* 画像の幅を100pxに設定 */
+  height: auto; /* 画像の高さを自動調整 */
+  margin-right: 20px; /* 画像とテキストの間にマージンを追加 */
+}
+
+/* ポケモンのバッジのスタイル */
+.badge {
+  margin-left: 10px; /* バッジとテキストの間にマージンを追加 */
+}
